@@ -1,20 +1,13 @@
-//
-//  ViewController.swift
-//  ComposableArchitecture
-//
-//  Created by Kamil on 08.02.2023.
-//
-
 import UIKit
 
-class MainScreenViewController: UIViewController {
+class HomeScreenViewController: UIViewController {
 
     private lazy var tableView: UITableView = {
-        let tableView = UITableView()
+        let tableView = UITableView(frame: .zero)
         tableView.register(
-            MainScreenTableViewCell.self,
-             forCellReuseIdentifier: "ViewControllerTableViewCell"
-         )
+            HomeScreenTableViewCell.self,
+            forCellReuseIdentifier: HomeScreenTableViewCell.reuseIdentifier
+        )
         tableView.dataSource = self
         tableView.delegate = self
         return tableView
@@ -26,26 +19,27 @@ class MainScreenViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view = tableView
     }
 }
 
 // MARK: - UITableViewDelegate extension
 
-extension MainScreenViewController: UITableViewDelegate {
+extension HomeScreenViewController: UITableViewDelegate {
 }
 
 // MARK: - UITableViewDataSource extension
 
-extension MainScreenViewController: UITableViewDataSource {
+extension HomeScreenViewController: UITableViewDataSource {
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(
-                withIdentifier: "ViewControllerTableViewCell",
+            withIdentifier: HomeScreenTableViewCell.reuseIdentifier,
                 for: indexPath
-        ) as? UITableViewCell & CellConfigurable
+        ) as? any UITableViewCell & HomeScreenConfigurableCell
         else {
             return UITableViewCell()
         }
+        
         cell.configure(with: .text("\(indexPath.row) row"))
         return cell
     }
@@ -55,7 +49,15 @@ extension MainScreenViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 64
+        return Constants.rowHeight
+    }
+}
+
+// MARK: - Nested types
+
+extension HomeScreenViewController {
+    enum Constants {
+        static let rowHeight: CGFloat = 64
     }
 }
 

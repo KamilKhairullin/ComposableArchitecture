@@ -1,5 +1,5 @@
 import Foundation
 
-enum CellData {
+enum HomeScreenCellData {
     case text(String)
 }

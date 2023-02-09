@@ -8,7 +8,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     ) -> Bool {
         window = UIWindow(frame: UIScreen.main.bounds)
         guard let window = window else { return false }
-        window.rootViewController = MainScreenViewController()
+        window.rootViewController = HomeScreenViewController()
         window.makeKeyAndVisible()
         return true
     }
