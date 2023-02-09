@@ -2,6 +2,8 @@ import UIKit
 
 class HomeScreenViewController: UIViewController {
 
+    // MARK: - Properties
+    
     private lazy var tableView: UITableView = {
         let tableView = UITableView(frame: .zero)
         tableView.register(
@@ -13,6 +15,25 @@ class HomeScreenViewController: UIViewController {
         return tableView
     }()
     
+    private var store: Store<AppState>
+    
+    // MARK: - Lifecycle
+    
+    init() {
+        var initialValues: [Int] = []
+        for _ in 0..<Constants.numberOfRows {
+            initialValues.append(0)
+        }
+        let counterState = CounterState(initialValues: initialValues)
+        let appState = AppState(counterState: counterState)
+        self.store = Store(reducer: appReducer(action:state:), state: appState)
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func loadView() {
         self.view = tableView
     }
@@ -20,13 +41,18 @@ class HomeScreenViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+    }
 }
 
 // MARK: - UITableViewDelegate extension
 
 extension HomeScreenViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        navigationController?.pushViewController(CounterViewController(), animated: true)
+        let viewController = CounterViewController(store: &store, rowIndex: indexPath.row)
+        navigationController?.pushViewController(viewController, animated: true)
     }
 }
 
@@ -61,7 +87,7 @@ extension HomeScreenViewController: UITableViewDataSource {
 extension HomeScreenViewController {
     enum Constants {
         static let rowHeight: CGFloat = 64
-        static let numberOfRows: Int = 10
+        static let numberOfRows: Int = 100
     }
 }
 

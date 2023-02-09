@@ -9,6 +9,10 @@ enum ColorPalette {
     static var link: UIColor {
         UIColor(named: #function)!
     }
+    
+    static var background: UIColor {
+        UIColor(named: #function)!
+    }
 }
 
 

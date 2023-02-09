@@ -13,7 +13,7 @@ final class HomeScreenTableViewCell: UITableViewCell {
     private lazy var title: UILabel = {
         let label = UILabel()
         label.textColor = ColorPalette.text
-        label.font = Fonts.normal
+        label.font = Font.normal
         return label
     }()
 

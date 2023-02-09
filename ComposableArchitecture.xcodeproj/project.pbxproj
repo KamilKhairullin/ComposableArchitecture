@@ -10,7 +10,12 @@
 		8E4EF2982995836E0013CE6E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8E4EF2972995836E0013CE6E /* Main.storyboard */; };
 		8E4EF29A29958F820013CE6E /* ColorPalette.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4EF29929958F820013CE6E /* ColorPalette.swift */; };
 		8E4EF29E299598AD0013CE6E /* CounterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4EF29D299598AD0013CE6E /* CounterViewController.swift */; };
-		8E4EF2A02995A0020013CE6E /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4EF29F2995A0020013CE6E /* Fonts.swift */; };
+		8E4EF2A02995A0020013CE6E /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4EF29F2995A0020013CE6E /* Font.swift */; };
+		8E4EF2A32995A5240013CE6E /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4EF2A22995A5240013CE6E /* AppState.swift */; };
+		8E4EF2A52995A8EA0013CE6E /* AppReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4EF2A42995A8EA0013CE6E /* AppReducer.swift */; };
+		8E4EF2A72995A9000013CE6E /* Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4EF2A62995A9000013CE6E /* Action.swift */; };
+		8E4EF2A92995B4770013CE6E /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4EF2A82995B4770013CE6E /* Store.swift */; };
+		8E4EF2AB2995B5740013CE6E /* StoreSubscriber.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4EF2AA2995B5740013CE6E /* StoreSubscriber.swift */; };
 		8E7D97F42993E1A80035385E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7D97F32993E1A80035385E /* AppDelegate.swift */; };
 		8E7D97F82993E1A80035385E /* HomeScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7D97F72993E1A80035385E /* HomeScreenViewController.swift */; };
 		8E7D97FD2993E1A90035385E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8E7D97FC2993E1A90035385E /* Assets.xcassets */; };
@@ -23,7 +28,12 @@
 		8E4EF2972995836E0013CE6E /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		8E4EF29929958F820013CE6E /* ColorPalette.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPalette.swift; sourceTree = "<group>"; };
 		8E4EF29D299598AD0013CE6E /* CounterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterViewController.swift; sourceTree = "<group>"; };
-		8E4EF29F2995A0020013CE6E /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
+		8E4EF29F2995A0020013CE6E /* Font.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
+		8E4EF2A22995A5240013CE6E /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
+		8E4EF2A42995A8EA0013CE6E /* AppReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppReducer.swift; sourceTree = "<group>"; };
+		8E4EF2A62995A9000013CE6E /* Action.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Action.swift; sourceTree = "<group>"; };
+		8E4EF2A82995B4770013CE6E /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
+		8E4EF2AA2995B5740013CE6E /* StoreSubscriber.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreSubscriber.swift; sourceTree = "<group>"; };
 		8E7D97F02993E1A80035385E /* ComposableArchitecture.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ComposableArchitecture.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E7D97F32993E1A80035385E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8E7D97F72993E1A80035385E /* HomeScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenViewController.swift; sourceTree = "<group>"; };
@@ -61,6 +71,18 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		8E4EF2A12995A2690013CE6E /* AppState */ = {
+			isa = PBXGroup;
+			children = (
+				8E4EF2A22995A5240013CE6E /* AppState.swift */,
+				8E4EF2A42995A8EA0013CE6E /* AppReducer.swift */,
+				8E4EF2A62995A9000013CE6E /* Action.swift */,
+				8E4EF2A82995B4770013CE6E /* Store.swift */,
+				8E4EF2AA2995B5740013CE6E /* StoreSubscriber.swift */,
+			);
+			path = AppState;
+			sourceTree = "<group>";
+		};
 		8E7D97E72993E1A80035385E = {
 			isa = PBXGroup;
 			children = (
@@ -82,8 +104,9 @@
 			children = (
 				8E7D97F32993E1A80035385E /* AppDelegate.swift */,
 				8E4EF29929958F820013CE6E /* ColorPalette.swift */,
-				8E4EF29F2995A0020013CE6E /* Fonts.swift */,
+				8E4EF29F2995A0020013CE6E /* Font.swift */,
 				8E7D980D299519280035385E /* Configurable.swift */,
+				8E4EF2A12995A2690013CE6E /* AppState */,
 				8E7D9809299518E80035385E /* HomeScreen */,
 				8E4EF29B299598300013CE6E /* CounterScreen */,
 				8E7D97FC2993E1A90035385E /* Assets.xcassets */,
@@ -189,9 +212,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8E4EF2A02995A0020013CE6E /* Fonts.swift in Sources */,
+				8E4EF2A02995A0020013CE6E /* Font.swift in Sources */,
+				8E4EF2A72995A9000013CE6E /* Action.swift in Sources */,
 				8E7D97F82993E1A80035385E /* HomeScreenViewController.swift in Sources */,
+				8E4EF2AB2995B5740013CE6E /* StoreSubscriber.swift in Sources */,
+				8E4EF2A92995B4770013CE6E /* Store.swift in Sources */,
 				8E7D980E299519280035385E /* Configurable.swift in Sources */,
+				8E4EF2A32995A5240013CE6E /* AppState.swift in Sources */,
+				8E4EF2A52995A8EA0013CE6E /* AppReducer.swift in Sources */,
 				8E4EF29E299598AD0013CE6E /* CounterViewController.swift in Sources */,
 				8E7D9810299519790035385E /* HomeScreenCellData.swift in Sources */,
 				8E7D97F42993E1A80035385E /* AppDelegate.swift in Sources */,
