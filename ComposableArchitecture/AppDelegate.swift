@@ -8,7 +8,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     ) -> Bool {
         window = UIWindow(frame: UIScreen.main.bounds)
         guard let window = window else { return false }
-        window.rootViewController = HomeScreenViewController()
+        let navigationController = UINavigationController(rootViewController: HomeScreenViewController())
+        window.rootViewController = navigationController
         window.makeKeyAndVisible()
         return true
     }

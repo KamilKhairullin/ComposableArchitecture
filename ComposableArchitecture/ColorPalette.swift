@@ -2,8 +2,12 @@ import UIKit
 
 enum ColorPalette {
     
-    static var black: UIColor {
-        UIColor(rgb: 0x000000)
+    static var text: UIColor {
+        UIColor(named: #function)!
+    }
+    
+    static var link: UIColor {
+        UIColor(named: #function)!
     }
 }
 

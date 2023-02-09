@@ -25,6 +25,9 @@ class HomeScreenViewController: UIViewController {
 // MARK: - UITableViewDelegate extension
 
 extension HomeScreenViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        navigationController?.pushViewController(CounterViewController(), animated: true)
+    }
 }
 
 // MARK: - UITableViewDataSource extension
@@ -45,7 +48,7 @@ extension HomeScreenViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return Constants.numberOfRows
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -58,6 +61,7 @@ extension HomeScreenViewController: UITableViewDataSource {
 extension HomeScreenViewController {
     enum Constants {
         static let rowHeight: CGFloat = 64
+        static let numberOfRows: Int = 10
     }
 }
 

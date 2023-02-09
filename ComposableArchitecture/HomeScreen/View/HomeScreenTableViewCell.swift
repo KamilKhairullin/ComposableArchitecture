@@ -12,8 +12,8 @@ final class HomeScreenTableViewCell: UITableViewCell {
 
     private lazy var title: UILabel = {
         let label = UILabel()
-        label.textColor = ColorPalette.black
-        label.font = .systemFont(ofSize: Constants.fontSize)
+        label.textColor = ColorPalette.text
+        label.font = Fonts.normal
         return label
     }()
 
@@ -67,12 +67,11 @@ extension HomeScreenTableViewCell {
     }
     
     enum Constants {
-        static let fontSize: CGFloat = 18
         static let titleHeight: CGFloat = 20
     }
 }
 
-// MARK: - TaskListModuleTaskCellConfigurable extension
+// MARK: - HomeScreenConfigurableCell extension
 
 extension HomeScreenTableViewCell: HomeScreenConfigurableCell {
     func configure(with data: HomeScreenCellData) {
