@@ -44,6 +44,7 @@ class HomeScreenViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        tableView.reloadData()
     }
 }
 
@@ -69,7 +70,7 @@ extension HomeScreenViewController: UITableViewDataSource {
             return UITableViewCell()
         }
         
-        cell.configure(with: .text("\(indexPath.row) row"))
+        cell.configure(with: .text("\(indexPath.row) row - \(store.state.counterState.values[indexPath.row])"))
         return cell
     }
     

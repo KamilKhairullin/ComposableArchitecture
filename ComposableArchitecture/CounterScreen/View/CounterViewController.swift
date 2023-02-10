@@ -107,7 +107,7 @@ final class CounterViewController: UIViewController {
 extension CounterViewController {
     enum Constants {
         static let fontSize: CGFloat = 32
-        static let stackViewSize: CGSize = .init(width: 100, height: 64)
+        static let stackViewSize: CGSize = .init(width: 150, height: 64)
     }
 }
 
